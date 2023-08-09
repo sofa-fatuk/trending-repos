@@ -25,7 +25,10 @@ async function syncRepos() {
       name: item.name,
       description: item.description,
       stargazers_count: item.stargazers_count,
-      git_url: item.git_url,
+      html_url: item.html_url,
+      forks_count: item.forks_count,
+      language: item.language,
+      keys_url: item.keys_url,
     };
   });
   await Repo.deleteMany({});

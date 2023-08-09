@@ -31,6 +31,7 @@ function getRepos({ date, sort = "stars", order = "desc" }) {
           return;
         }
         const trendingRepos = JSON.parse(data).items;
+        console.log(trendingRepos);
         resolve(trendingRepos);
       });
     });
