@@ -24,9 +24,4 @@ async function syncRepos() {
   }
 }
 
-const intervalMinutes = 20;
-const intervalMillis = intervalMinutes * 60 * 1000;
-
-setInterval(syncRepos, intervalMillis);
-
 export default syncRepos;

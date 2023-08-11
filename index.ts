@@ -37,6 +37,12 @@ async function startApp() {
     }
     await mongoose.connect(DB_URL);
     await syncRepos();
+
+    const intervalMinutes = 1;
+    const intervalMillis = intervalMinutes * 60 * 1000;
+
+    setInterval(syncRepos, intervalMillis);
+
     app.listen(PORT, () => console.log("hello"));
   } catch (error) {
     console.log(error);
