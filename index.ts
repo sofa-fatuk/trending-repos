@@ -1,11 +1,12 @@
 import express from "express";
 import mongoose from "mongoose";
+import { Request, Response } from "express";
 import cors from "cors";
 
-import router from "./src/db/router.js";
-import syncRepos from "./src/syncRepos.js";
+import router from "./src/db/router";
+import syncRepos from "./src/syncRepos";
 
-import dotenv from "dotenv";
+import * as dotenv from "dotenv";
 
 dotenv.config();
 
@@ -22,12 +23,13 @@ app.use(cors(corsOptions));
 app.use(express.json());
 app.use("/api", router);
 
-app.get("/", (req, res) => {
-  res.status(200).json("Server done");
+app.get("/", (req: Request, res: Response) => {
+  res.json("Server done");
 });
 
 async function startApp() {
   try {
+    console.log("DB_URL", DB_URL);
     await mongoose.connect(DB_URL);
     await syncRepos();
     app.listen(PORT, () => console.log("hello"));

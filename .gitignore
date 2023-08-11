@@ -1,2 +1,6 @@
 /node_modules
 .env
+/src/db/schemas/Repo.js
+/src/cli.js
+/src/getRepos.js
+/src/syncRepos.js

@@ -1,7 +1,8 @@
-import Router from "express";
-import RepoController from "../repoController.js";
+import Router, { Express } from "express";
+import RepoController from "../repoController";
 
-const router = new Router();
+// @ts-expect-error: Lib mistke
+const router: Express = new Router();
 
 router.post("/repos", RepoController.forceSyncRepos);
 router.get("/repos", RepoController.getAll);
