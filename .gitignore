@@ -4,3 +4,4 @@
 /src/cli.js
 /src/getRepos.js
 /src/syncRepos.js
+.DS_Store
